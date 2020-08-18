@@ -8,10 +8,13 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"build": "webpack --progress --colors"
+		"build": "webpack --progress --colors --mode=production"
 	},
 	"dependencies": {
 		"webpack": "4.41.2",
 		"webpack-cli": "3.3.10"
+	},
+	"devDependencies": {
+		"html-webpack-plugin": "3.2.0"
 	}
 }
