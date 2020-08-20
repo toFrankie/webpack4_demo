@@ -8,6 +8,7 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
+		"dev": "webpack-dev-server --config webpack.config.js --colors",
 		"build": "webpack --progress --colors --mode=production"
 	},
 	"dependencies": {
@@ -15,6 +16,8 @@
 		"webpack-cli": "3.3.10"
 	},
 	"devDependencies": {
-		"html-webpack-plugin": "3.2.0"
+		"clean-webpack-plugin": "3.0.0",
+		"html-webpack-plugin": "3.2.0",
+		"webpack-dev-server": "3.9.0"
 	}
 }
