@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 const config = {
   mode: 'development',
@@ -10,6 +11,7 @@ const config = {
   },
   devServer: {
     contentBase: './dist',
+    hot: true,
     open: true
   },
   plugins: [
@@ -22,8 +24,19 @@ const config = {
       favicon: './src/favicon.ico'
     }),
     // 新版无需再指定删除目录，默认删除 output 目录
-    new CleanWebpackPlugin()
-  ]
+    new CleanWebpackPlugin(),
+    // 热更新
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 }
 
 module.exports = config
