@@ -7,7 +7,7 @@ const config = {
   mode: 'development',
   devtool: 'eval-source-map',
   entry: {
-    index: path.resolve(__dirname, './src/index.js')
+    index: path.resolve(__dirname, './src/js/index.js')
   },
   devServer: {
     contentBase: './dist',
