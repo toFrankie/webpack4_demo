@@ -20,8 +20,11 @@ const reducer = (prevState, action) => {
 // 初始化值
 const initialState = { count: 0 }
 
+// 判断是否含有 Redux DevTools 插件
+const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ ? __REDUX_DEVTOOLS_EXTENSION__() : applyMiddleware(logger)
+
 // 创建 Store（也可以不传入 initialState 参数，而将 reducer 中的 state 设置一个初始值）
-const store = createStore(reducer, initialState, applyMiddleware(logger))
+const store = createStore(reducer, initialState, enhancers)
 
 // 监听 state 变化
 // const unsubscribe = store.subscribe(() => {
