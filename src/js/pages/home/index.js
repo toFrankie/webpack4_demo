@@ -22,6 +22,9 @@ class Home extends Component {
         <h5>count：{this.props.count}</h5>
         <button onClick={this.handle.bind(this, 'ADD', 1)}>加一</button>
         <button onClick={this.handle.bind(this, 'SUB', 1)}>减一</button>
+        <h5>status：{this.props.status}</h5>
+        <button onClick={() => {this.props.toggleStatus('LOGIN_IN')}}>Login in</button>
+        <button onClick={() => {this.props.toggleStatus('LOGIN_OUT')}}>Login out</button>
       </div>
     )
   }
@@ -29,7 +32,10 @@ class Home extends Component {
 
 // 将 count 映射到 Home 组件的 props 属性上，通过 this.props.count 即可访问到它。
 const mapStateToProps = (state, ownProps) => {
-  return { count: state.count }
+  return {
+    count: state.count,
+    status: state.status
+  }
 }
 
 // 同理，它将 simpleDispatch 映射到组件的 props 属性上，通过 this.props.simpleDispatch 访问并由 Redux 发出一个 Action。
@@ -37,6 +43,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     simpleDispatch: (type, payload) => {
       dispatch({ type, payload })
+    },
+    toggleStatus: type => {
+      dispatch({ type })
     }
   }
 }
