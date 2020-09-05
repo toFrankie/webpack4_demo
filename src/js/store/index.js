@@ -5,7 +5,7 @@ import rootSaga from '../sagas'
 import reducers from '../reducers'
 
 // 初始值
-const initialState = { count: 0 }
+const initialState = { count: 0, status: 'offline' }
 
 // 创建 saga middleware
 const sagaMiddleware = createSagaMiddleware()
