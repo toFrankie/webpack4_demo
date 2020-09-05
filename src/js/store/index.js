@@ -1,30 +1,26 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
+import rootSaga from '../sagas'
+import reducers from '../reducers'
 
-// Reducer 处理函数
-const reducer = (prevState, action) => {
-  const { type, payload } = action
-  switch (type) {
-    case 'ADD':
-      // 一定要不能修改 state，而是返回一个新的副本
-      // 倘若 state 是引用数据类型，一定要借助 Object.assign、对象展开运算符(...)、其他库的拷贝方法或者自己实现深拷贝方法，返回一个新副本
-      return { ...prevState, count: prevState.count + payload }
-    case 'SUB':
-      return { ...prevState, count: prevState.count - payload }
-    default:
-      // default 或者未知 action 时，返回旧的 state
-      return prevState
-  }
-}
-
-// 初始化值
+// 初始值
 const initialState = { count: 0 }
 
+// 创建 saga middleware
+const sagaMiddleware = createSagaMiddleware()
+
+// 当使用 middleware 时，我们需要使用 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 作判断了
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+
 // 判断是否含有 Redux DevTools 插件
-const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ ? __REDUX_DEVTOOLS_EXTENSION__() : applyMiddleware(logger)
+const middlewares = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ? applyMiddleware(sagaMiddleware) : applyMiddleware(sagaMiddleware, logger)
 
 // 创建 Store（也可以不传入 initialState 参数，而将 reducer 中的 state 设置一个初始值）
-const store = createStore(reducer, initialState, enhancers)
+const store = createStore(reducers, initialState, composeEnhancers(middlewares))
+
+// 启动 saga
+sagaMiddleware.run(rootSaga)
 
 // 监听 state 变化
 // const unsubscribe = store.subscribe(() => {
