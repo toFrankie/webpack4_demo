@@ -18,5 +18,6 @@
 * [从零到一搭建 react 项目系列之（七）](https://www.jianshu.com/p/13ea372cdd45)
 * [从零到一搭建 react 项目系列之（八）](https://www.jianshu.com/p/f0ac6db3a354)
 * [从零到一搭建 react 项目系列之（九）](https://www.jianshu.com/p/9fad70e92ac7)
+* [从零到一搭建 react 项目系列之（十）](https://www.jianshu.com/p/aa35cafecd2a)
 
 目前暂未更新完，加速 ing...
