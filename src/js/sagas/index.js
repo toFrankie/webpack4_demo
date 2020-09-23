@@ -7,7 +7,7 @@ function* helloSaga() {
 
 function* rootSaga() {
   yield all([
-    fork(helloSaga),
+    // fork(helloSaga),
     fork(watchFetchData)
   ])
 }
