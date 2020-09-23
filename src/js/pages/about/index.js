@@ -12,10 +12,8 @@ class About extends Component {
     return (
       <div>
         <h3>About Component！</h3>
-        <h5>Get User: {this.props.user.status || ''}</h5>
-        {/* 我们发现这里并不是传了一个标准的 Action 对象，而是一个函数 */}
-        <button onClick={() => { this.props.dispatch(getUser(false)) }}>Get User Fail</button>
-        <button onClick={() => { this.props.dispatch(getUser(true)) }}>Get User Success</button>
+        <h5>Get User: {this.props.user.name || ''}</h5>
+        <button onClick={() => { this.props.dispatch({ type: 'FETCH_REQUEST', status: 'requesting' }) }}>Fetch Data</button>
       </div>
     )
   }
