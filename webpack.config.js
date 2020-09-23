@@ -14,6 +14,10 @@ const config = {
     hot: true,
     open: true
   },
+  optimization: {
+    // 告知 webpack 使用可读取模块标识符，来帮助更好地调试，开发模式默认开启。简单地说，禁用时看到的是一个数字 id，而不是一个包括路径的具体模块名称
+    namedModules: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: '开发环境', // 模板要使用 <title><%= htmlWebpackPlugin.options.title %></title> 配置才生效
@@ -23,10 +27,9 @@ const config = {
       hash: true, // 加上 hash 值
       favicon: './src/favicon.ico'
     }),
-    // 新版无需再指定删除目录，默认删除 output 目录
+    // 新版无需再指定删除目录，默认删除 output 的目录
     new CleanWebpackPlugin(),
-    // 热更新
-    new webpack.NamedModulesPlugin(),
+    // 通过它启用 HMR 之后，它的接口将被暴露在 module.hot 属性下面
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
