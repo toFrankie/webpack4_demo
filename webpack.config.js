@@ -6,12 +6,13 @@ const webpack = require('webpack')
 const config = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: {
-    index: path.resolve(__dirname, './src/js/index.js')
-  },
+  entry: [
+    'react-hot-loader/patch',
+    './src/js/index.js'
+  ],
   devServer: {
     contentBase: './dist',
-    hot: true,
+    hot: true, // 启用 webpack 的 HMR 功能。需要注意的是，要完全启用 HMR，需要 webpack.HotModuleReplacementPlugin
     open: true
   },
   optimization: {
@@ -32,6 +33,11 @@ const config = {
     // 通过它启用 HMR 之后，它的接口将被暴露在 module.hot 属性下面
     new webpack.HotModuleReplacementPlugin()
   ],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+  },
   module: {
     rules: [
       {
