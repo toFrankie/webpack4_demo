@@ -34,6 +34,7 @@ const config = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
