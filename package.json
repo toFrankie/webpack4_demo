@@ -10,8 +10,10 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --colors",
     "build": "webpack --config webpack.config.js --progress --colors --mode=production",
-    "eslint": "eslint ./app.js ./test/test.js",
-    "prettier": "prettier --write ."
+    "eslint": "eslint . --ext .js",
+    "eslint:fix": "eslint --fix . --ext .js",
+    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,less,scss,json,md}'",
+    "format:all": "npm-run-all -s prettier:fix eslint:fix"
   },
   "dependencies": {
     "react": "16.12.0",
@@ -39,7 +41,9 @@
     "eslint-config-alloy": "3.7.1",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.18.3",
     "html-webpack-plugin": "3.2.0",
+    "npm-run-all": "4.1.5",
     "prettier": "2.0.5",
     "prettier-eslint-cli": "5.0.0",
     "react-hot-loader": "4.12.19",
