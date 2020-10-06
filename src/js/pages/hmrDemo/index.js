@@ -16,6 +16,7 @@ class HMRDemo extends Component {
         <h5>计数器：{this.state.count}</h5>
         <button
           onClick={() => {
+            // eslint-disable-next-line react/no-direct-mutation-state
             this.setState({ count: ++this.state.count })
           }}
         >
