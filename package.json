@@ -12,7 +12,7 @@
     "build": "webpack --config webpack.config.js --progress --colors --mode=production",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint --fix . --ext .js",
-    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,less,scss,json,md}'",
+    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,less,scss,json}'",
     "format:all": "npm-run-all -s prettier:fix eslint:fix"
   },
   "dependencies": {

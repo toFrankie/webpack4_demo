@@ -3,7 +3,7 @@ module.exports = {
   parser: 'babel-eslint',
   extends: [
     'alloy',
-    'alloy/react' // eslint-config-alloy/react
+    'alloy/react' // eslint-config-alloy 启用 eslint-plugin-react
   ],
   parserOptions: {
     ecmaVersion: 2019,
