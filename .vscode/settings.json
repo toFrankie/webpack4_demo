@@ -1,0 +1,26 @@
+{
+  "files.associations": {
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.acss": "css",
+    "*.axml": "html",
+    "*.wxml": "html",
+    "*.swan": "html"
+  },
+  "files.trimTrailingWhitespace": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.enable": true, // 是否开启 vscode 的 ESLint
+  "eslint.options": {
+    // 指定 vscode 的 ESLint 所处理的文件的后缀
+    "extensions": [".js", ".ts", ".tsx"]
+  },
+  "eslint.validate": ["javascript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // Prettier 并不能直接调用 ESLint，通过该属性来调用 ESLint
+  "prettier.eslintIntegration": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

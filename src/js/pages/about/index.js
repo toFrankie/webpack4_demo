@@ -13,7 +13,13 @@ class About extends Component {
       <div>
         <h3>About Component！</h3>
         <h5>Get User: {this.props.user.name || ''}</h5>
-        <button onClick={() => { this.props.dispatch({ type: 'FETCH_REQUEST', status: 'requesting' }) }}>Fetch Data</button>
+        <button
+          onClick={() => {
+            this.props.dispatch({ type: 'FETCH_REQUEST', status: 'requesting' })
+          }}
+        >
+          Fetch Data
+        </button>
       </div>
     )
   }

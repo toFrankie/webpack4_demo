@@ -8,7 +8,11 @@ class NotFound extends Component {
   }
 
   render() {
-    return <div>Page not found! <br /> <Link to="/">Go back</Link></div>
+    return (
+      <div>
+        Page not found! <br /> <Link to="/">Go back</Link>
+      </div>
+    )
   }
 }
 

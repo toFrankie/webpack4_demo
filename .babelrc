@@ -11,8 +11,5 @@
     ],
     "@babel/preset-react" // 解析 JSX 语法
   ],
-  "plugins": [
-    "react-hot-loader/babel",
-    "@babel/plugin-transform-runtime"
-  ]
+  "plugins": ["react-hot-loader/babel", "@babel/plugin-transform-runtime"]
 }

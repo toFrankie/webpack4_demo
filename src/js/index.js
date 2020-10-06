@@ -7,12 +7,11 @@ import Root from './Root'
 const rootElem = document.getElementById('app')
 render(<Root />, rootElem)
 
-
 if (module.hot) {
   module.hot.accept('./Root', () => {
     import('./Root.js').then(module => {
       const NextRoot = module.default
-      render(<NextRoot/>, rootElem)
+      render(<NextRoot />, rootElem)
     })
   })
 }

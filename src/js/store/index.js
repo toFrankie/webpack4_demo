@@ -14,7 +14,8 @@ const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
 // 判断是否含有 Redux DevTools 插件
-const middlewares = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ? applyMiddleware(sagaMiddleware) : applyMiddleware(sagaMiddleware, logger)
+const middlewares =
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ? applyMiddleware(sagaMiddleware) : applyMiddleware(sagaMiddleware, logger)
 
 // 创建 Store（也可以不传入 initialState 参数，而将 reducer 中的 state 设置一个初始值）
 const store = createStore(reducers, initialState, composeEnhancers(middlewares))

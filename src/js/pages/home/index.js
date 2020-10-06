@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import store from '../../store'
 
 class Home extends Component {
@@ -23,8 +23,20 @@ class Home extends Component {
         <button onClick={this.handle.bind(this, 'ADD', 1)}>加一</button>
         <button onClick={this.handle.bind(this, 'SUB', 1)}>减一</button>
         <h5>status：{this.props.status}</h5>
-        <button onClick={() => { this.props.toggleStatus('LOGIN_IN') }}>Login in</button>
-        <button onClick={() => { this.props.toggleStatus('LOGIN_OUT') }}>Login out</button>
+        <button
+          onClick={() => {
+            this.props.toggleStatus('LOGIN_IN')
+          }}
+        >
+          Login in
+        </button>
+        <button
+          onClick={() => {
+            this.props.toggleStatus('LOGIN_OUT')
+          }}
+        >
+          Login out
+        </button>
       </div>
     )
   }
