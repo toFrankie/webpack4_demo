@@ -8,10 +8,10 @@ root = true
 
 # 匹配所有的文件
 [*]
-# 缩进风格：tab
-indent_style = tab
-# 缩进大小 4
-indent_size = 4
+# 缩进风格：space
+indent_style = space
+# 缩进大小 2
+indent_size = 2
 # 换行符 lf
 end_of_line = lf
 # 字符集 utf-8
@@ -46,4 +46,3 @@ trim_trailing_whitespace = false
 # [{package.json}]
 # indent_style = tab
 # indent_size = 2
-
