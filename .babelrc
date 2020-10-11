@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "modules": false, // 将ESM 转化为其他模块规范，默认值 false。
+        "modules": false, // 将 ESM 转化为其他模块规范，默认值 false。
         "useBuiltIns": "usage", // 按需加载
         "corejs": 3, // Babel 建议使用 useBuiltIns 选项时显式设置 core-js 版本
         "debug": false // 打印插件使用情况
