@@ -1,7 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpack = require('webpack')
+// const ESLintPlugin = require('eslint-webpack-plugin')
 
 const config = {
   mode: 'development',
@@ -17,6 +18,9 @@ const config = {
     namedModules: true
   },
   plugins: [
+    // new ESLintPlugin({
+    //   fix: true
+    // }),
     new HtmlWebpackPlugin({
       title: '开发环境', // 模板要使用 <title><%= htmlWebpackPlugin.options.title %></title> 配置才生效
       template: './src/index.html', // 模板路径
