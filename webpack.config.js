@@ -48,7 +48,17 @@ const config = {
         use: 'babel-loader'
       },
       {
-        test: /\.css/,
+        test: /\.js$/,
+        enforce: 'pre', // 确保要比 babel-loader 执行，因为 eslint-loader 要检测的是 babel 之前的代码
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true, // 启用 ESLint autofix 自动修复，注意此选项将更改源文件。
+          cache: true
+        }
+      },
+      {
+        test: /\.css$/,
         use: ['style-loader', 'css-loader']
       }
     ]
