@@ -2,7 +2,6 @@
   "name": "webpack4_demo",
   "version": "1.0.0",
   "description": "从零到一搭建 react 项目",
-  "main": "src/index.js",
   "repository": "git@github.com:toFrankie/webpack4_demo.git",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
