@@ -2613,9 +2613,9 @@ eslint-config-alloy@3.7.1:
   resolved "https://registry.npm.taobao.org/eslint-config-alloy/download/eslint-config-alloy-3.7.1.tgz#315de2151c6870a207558c290f369333900d413a"
   integrity sha1-MV3iFRxocKIHVYwpDzaTM5ANQTo=
 
-eslint-loader@^4.0.2:
+eslint-loader@4.0.2:
   version "4.0.2"
-  resolved "https://registry.npm.taobao.org/eslint-loader/download/eslint-loader-4.0.2.tgz#386a1e21bcb613b3cf2d252a3b708023ccfb41ec"
+  resolved "https://registry.npm.taobao.org/eslint-loader/download/eslint-loader-4.0.2.tgz?cache=0&sync_timestamp=1601214436656&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-loader%2Fdownload%2Feslint-loader-4.0.2.tgz#386a1e21bcb613b3cf2d252a3b708023ccfb41ec"
   integrity sha1-OGoeIby2E7PPLSUqO3CAI8z7Qew=
   dependencies:
     find-cache-dir "^3.3.1"
