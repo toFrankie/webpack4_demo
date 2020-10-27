@@ -44,13 +44,13 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
+        exclude: path.resolve(__dirname, 'node_modules'),
+        loader: 'babel-loader'
       },
       {
         test: /\.js$/,
         enforce: 'pre', // 确保要比 babel-loader 执行，因为 eslint-loader 要检测的是 babel 之前的代码
-        exclude: /node_modules/,
+        exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'eslint-loader',
         options: {
           fix: true, // 启用 ESLint autofix 自动修复，注意此选项将更改源文件。
