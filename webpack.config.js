@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const config = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map', // 生产：cheap-module-source-map
   entry: ['react-hot-loader/patch', './src/js/index.js'],
   devServer: {
     contentBase: './dist',
@@ -21,6 +21,8 @@ const config = {
     // new ESLintPlugin({
     //   fix: true
     // }),
+
+    // 创建 HTML 文件
     new HtmlWebpackPlugin({
       title: '开发环境', // 模板要使用 <title><%= htmlWebpackPlugin.options.title %></title> 配置才生效
       template: './src/index.html', // 模板路径
@@ -29,10 +31,19 @@ const config = {
       hash: true, // 加上 hash 值
       favicon: './src/favicon.ico'
     }),
+
     // 新版无需再指定删除目录，默认删除 output 的目录
     new CleanWebpackPlugin(),
+
     // 通过它启用 HMR 之后，它的接口将被暴露在 module.hot 属性下面
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    // 允许在编译时(compile time)配置的全局常量
+    new webpack.DefinePlugin({
+      // PRODUCTION: JSON.stringify(true),
+      // 注意，因为这个插件直接执行文本替换，给定的值必须包含字符串本身内的实际引号。通常，有两种方式来达到这个效果，使用 '"production"', 或者使用 JSON.stringify('production')。
+      // 'process.env.NODE_ENV': JSON.stringify('development') // '"development"'
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
