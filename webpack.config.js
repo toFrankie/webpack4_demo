@@ -8,10 +8,18 @@ const config = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map', // 生产：cheap-module-source-map
   entry: ['react-hot-loader/patch', './src/js/index.js'],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].bundle.js', // 入口文件打包名称
+    chunkFilename: '[chunkhash].bundle.js' // 非入口文件但参与构建
+  },
   devServer: {
     contentBase: './dist',
+    publicPath: '/',
     hot: true, // 启用 webpack 的 HMR 功能。需要注意的是，要完全启用 HMR，需要 webpack.HotModuleReplacementPlugin
-    open: true
+    open: true,
+    inline: true // 默认值 true，选择 iframe 模式的话，设置为 false。
   },
   optimization: {
     // 告知 webpack 使用可读取模块标识符，来帮助更好地调试，开发模式默认开启。简单地说，禁用时看到的是一个数字 id，而不是一个包括路径的具体模块名称
@@ -36,6 +44,7 @@ const config = {
     new CleanWebpackPlugin(),
 
     // 通过它启用 HMR 之后，它的接口将被暴露在 module.hot 属性下面
+    // 如果使用 --hot 选项启动 webpack 或 webpack-dev-server，该插件将自动添加，此时你可能不需要将其添加到 webpack.config.js 中。
     new webpack.HotModuleReplacementPlugin(),
 
     // 允许在编译时(compile time)配置的全局常量
