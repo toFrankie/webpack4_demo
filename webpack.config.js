@@ -11,11 +11,11 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].bundle.js', // 入口文件打包名称
+    filename: 'devPublicPath/[name].bundle.js', // 入口文件打包名称
     chunkFilename: '[chunkhash].bundle.js' // 非入口文件但参与构建
   },
   devServer: {
-    contentBase: './dist',
+    // contentBase: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     hot: true, // 启用 webpack 的 HMR 功能。需要注意的是，要完全启用 HMR，需要 webpack.HotModuleReplacementPlugin
     open: true,
@@ -80,6 +80,14 @@ const config = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|gif|jpg|jpeg|bmp|webp)$/i,
+        loader: 'file-loader',
+        options: {
+          limit: 8192,
+          name: '[name].[ext]'
+        }
       }
     ]
   }
