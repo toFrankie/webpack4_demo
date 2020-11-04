@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../../store'
+import avatarImg from '../../../images/avatar.jpg'
 
 class Home extends Component {
   constructor(props) {
@@ -37,6 +38,8 @@ class Home extends Component {
         >
           Login out
         </button>
+
+        <img src={avatarImg} />
       </div>
     )
   }
