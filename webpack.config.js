@@ -11,14 +11,20 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'devPublicPath/[name].bundle.js', // 入口文件打包名称
+    filename: '[name].bundle.js', // 入口文件打包名称
     chunkFilename: '[chunkhash].bundle.js' // 非入口文件但参与构建
   },
   devServer: {
+    // contentBase只和我们的静态资源相关也就是图片，数据等，
+    // 需要和output.publicPath和output.path做一个区分。
+    // 后面两者指定的是我们打包出文件存放的路径，output.path是我们实际的存放路径，设置的output.publicPath会在我们打包出的html用以替换path路径，但是它所指向的也是我们的output.path打包的文件。
+    // contentBase主要是指定静态资源的根目录的，意思就是不受webpack控制的资源文件。视频中的案例并没有涉及到这种文件，所以加与不加都可以的。如果涉及到了非webpack受控的资源文件就需要指定这个contentBase字段了。
     // contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    // contentBase: false,
+    // publicPath: '/', // 确保 devServer.publicPath 总是以斜杠(/)开头和结尾。
     hot: true, // 启用 webpack 的 HMR 功能。需要注意的是，要完全启用 HMR，需要 webpack.HotModuleReplacementPlugin
     open: true,
+    port: 8081,
     inline: true // 默认值 true，选择 iframe 模式的话，设置为 false。
   },
   optimization: {
