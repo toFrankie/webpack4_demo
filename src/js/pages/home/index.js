@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../../store'
 import avatarImg from '../../../images/avatar.jpg'
+import style from './index.scss'
 
 class Home extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Home extends Component {
         <button onClick={this.handle.bind(this, 'SUB', 1)}>减一</button>
         <h5>status：{this.props.status}</h5>
         <button
+          className={style.flexBox}
           onClick={() => {
             this.props.toggleStatus('LOGIN_IN')
           }}

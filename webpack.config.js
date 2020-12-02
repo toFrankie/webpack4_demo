@@ -79,12 +79,12 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'babel-loader'
       },
       {
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         enforce: 'pre', // 确保要比 babel-loader 执行，因为 eslint-loader 要检测的是 babel 之前的代码
         exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'eslint-loader',
@@ -94,7 +94,7 @@ const config = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
