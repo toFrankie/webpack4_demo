@@ -11,15 +11,25 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'devPublicPath/[name].bundle.js', // 入口文件打包名称
+    filename: '[name].bundle.js', // 入口文件打包名称
     chunkFilename: '[chunkhash].bundle.js' // 非入口文件但参与构建
   },
   devServer: {
-    // contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: false,
     publicPath: '/',
     hot: true, // 启用 webpack 的 HMR 功能。需要注意的是，要完全启用 HMR，需要 webpack.HotModuleReplacementPlugin
-    open: true,
-    inline: true // 默认值 true，选择 iframe 模式的话，设置为 false。
+    open: false,
+    inline: true, // 默认值 true，选择 iframe 模式的话，设置为 false。
+    // useLocalIp: true,
+    compress: true, // 启用 gzip 压缩
+    proxy: {
+      '/api': {
+        target: 'https://test-emsc.cx580.com',
+        pathRewrite: { '^/api': '' },
+        // secure: false,
+        changeOrigin: true
+      }
+    }
   },
   optimization: {
     // 告知 webpack 使用可读取模块标识符，来帮助更好地调试，开发模式默认开启。简单地说，禁用时看到的是一个数字 id，而不是一个包括路径的具体模块名称
@@ -51,14 +61,20 @@ const config = {
     new webpack.DefinePlugin({
       // PRODUCTION: JSON.stringify(true),
       // 注意，因为这个插件直接执行文本替换，给定的值必须包含字符串本身内的实际引号。通常，有两种方式来达到这个效果，使用 '"production"', 或者使用 JSON.stringify('production')。
-      // 'process.env.NODE_ENV': JSON.stringify('development') // '"development"'
+      'process.env.NODE_ENV': JSON.stringify('development') // '"development"'
     })
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
+      '@': path.resolve(__dirname, 'src/js'),
+      '~@': path.resolve(__dirname, 'src/styles'),
       'react-dom': '@hot-loader/react-dom'
     }
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     rules: [
@@ -79,7 +95,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(png|gif|jpg|jpeg|bmp|webp)$/i,

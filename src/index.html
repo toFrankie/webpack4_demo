@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
 
-  <body>
-    <div id="app"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <script>
+    !function (n, e) {
+      var t = n.documentElement,
+        i = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        d = function () {
+        var n = t.clientWidth;
+        if (n) {
+          var e = 50 * (n / 375);
+          t.style.fontSize = e + 'px'
+        }
+      };
+      n.addEventListener && (e.addEventListener(i, d, !1),
+        n.addEventListener('DOMContentLoaded', d, !1))
+    }(document, window);
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script crossorigin src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
+</body>
+
 </html>
+<!--
+  *
+  * 　　　┏┓　　　┏┓
+  * 　　┏┛┻━━━┛┻┓
+  * 　　┃　　　　　　　┃
+  * 　　┃　　　━　　　┃
+  * 　　┃　┳┛　┗┳　┃
+  * 　　┃　　　　　　　┃
+  * 　　┃　　　┻　　　┃
+  * 　　┃　　　　　　　┃
+  * 　　┗━┓　　　┏━┛
+  * 　　　　┃　　　┃    神兽保佑,代码无bug
+  * 　　　　┃　　　┃
+  * 　　　　┃　　　┗━━━┓
+  * 　　　　┃　　　　　 ┣┓
+  * 　　　　┃　　　　 ┏┛
+  * 　　　　┗┓┓┏━┳┓┏┛
+  * 　　　　　┃┫┫　┃┫┫
+  * 　　　　　┗┻┛　┗┻┛
+  *
+  *
+ -->
