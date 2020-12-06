@@ -10,6 +10,11 @@ class Home extends Component {
     this.state = {}
   }
 
+  componentDidMount() {
+    console.log(style)
+    console.log(style.redColor)
+  }
+
   handle(type, val) {
     this.props.simpleDispatch(type, val)
     // 获取 State 快照
@@ -26,7 +31,7 @@ class Home extends Component {
         <button onClick={this.handle.bind(this, 'SUB', 1)}>减一</button>
         <h5>status：{this.props.status}</h5>
         <button
-          className={style.flexBox}
+          className={style.redColor}
           onClick={() => {
             this.props.toggleStatus('LOGIN_IN')
           }}

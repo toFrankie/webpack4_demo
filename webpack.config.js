@@ -95,7 +95,16 @@ const config = {
       },
       {
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
       },
       {
         test: /\.(png|gif|jpg|jpeg|bmp|webp)$/i,
