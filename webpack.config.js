@@ -100,7 +100,15 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              url: true, // 启用/禁用 url() 处理
+              import: true, // 启用/禁用 url() 处理
+              // modules: {
+              //   mode: 'local', // local / global
+              //   localIdentName: '[local]', // 通过 [local] 只取css命名，实现公用样式的效果
+              // },
+              modules: true,
+              importLoaders: 1,
+              sourceMap: true
             }
           },
           'postcss-loader'

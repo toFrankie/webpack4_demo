@@ -23,7 +23,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.redColor}>
         <h3>Home Component!</h3>
         {/* 将 state 展示到页面上 */}
         <h5>count：{this.props.count}</h5>
@@ -31,7 +31,6 @@ class Home extends Component {
         <button onClick={this.handle.bind(this, 'SUB', 1)}>减一</button>
         <h5>status：{this.props.status}</h5>
         <button
-          className={style.redColor}
           onClick={() => {
             this.props.toggleStatus('LOGIN_IN')
           }}
