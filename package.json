@@ -2,8 +2,14 @@
   "name": "webpack4_demo",
   "version": "1.0.0",
   "description": "从零到一搭建 react 项目",
-  "repository": "git@github.com:toFrankie/webpack4_demo.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toFrankie/webpack4_demo.git"
+  },
+  "main": "src/js/index.js",
   "author": "Frankie <1426203851@qq.com>",
+  "homepage": "https://github.com/toFrankie/webpack4_demo#readme",
+  "bugs": "https://github.com/toFrankie/webpack4_demo/issues",
   "license": "MIT",
   "private": true,
   "scripts": {
