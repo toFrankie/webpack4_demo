@@ -4,7 +4,7 @@ import { call, fork, put, select, take, delay, race, takeEvery, takeLatest } fro
 function fetch() {
   return new Promise((resolve, reject) => {
     window
-      .fetch('http://192.168.1.124:7701/config')
+      .fetch('http://192.168.1.100:8080/config')
       .then(response => response.json())
       .then(res => {
         resolve(res)
