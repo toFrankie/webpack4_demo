@@ -18,7 +18,8 @@
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint --fix . --ext .js",
     "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,less,scss,json}'",
-    "format:all": "npm-run-all -s prettier:fix eslint:fix"
+    "format:all": "npm-run-all -s prettier:fix eslint:fix",
+    "mock": "node ./mock/server.js"
   },
   "browserslist": [
     "last 2 versions",
@@ -57,10 +58,12 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-react": "7.18.3",
     "eslint-webpack-plugin": "2.1.0",
+    "express": "4.17.1",
     "file-loader": "5.0.2",
     "html-webpack-plugin": "3.2.0",
     "less": "3.10.3",
     "less-loader": "5.0.0",
+    "mockjs": "1.1.0",
     "npm-run-all": "4.1.5",
     "postcss-loader": "3.0.0",
     "postcss-pxtorem": "4.0.1",

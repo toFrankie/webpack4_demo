@@ -26,7 +26,7 @@ const config = {
     proxy: {
       'http://192.168.1.100:8080/': {
         // target: 'https://test-emsc.cx580.com',
-        target: 'http://192.168.1.100:7701',
+        target: 'http://192.168.1.100:3001',
         // pathRewrite: { '^/api': '' },
         // secure: false,
         changeOrigin: true
