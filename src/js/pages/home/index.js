@@ -12,7 +12,6 @@ class Home extends Component {
 
   componentDidMount() {
     console.log(style)
-    console.log(style.redColor)
   }
 
   handle(type, val) {
@@ -23,7 +22,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className={style.redColor}>
+      <div className={`${style.redColor}`}>
         <h3>Home Component!</h3>
         {/* 将 state 展示到页面上 */}
         <h5>count：{this.props.count}</h5>

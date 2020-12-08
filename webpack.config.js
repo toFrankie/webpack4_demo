@@ -101,14 +101,13 @@ const config = {
             loader: 'css-loader',
             options: {
               url: true, // 启用/禁用 url() 处理
-              import: true, // 启用/禁用 url() 处理
-              // modules: {
-              //   mode: 'local', // local / global
-              //   localIdentName: '[local]', // 通过 [local] 只取css命名，实现公用样式的效果
-              // },
-              modules: true,
-              importLoaders: 1,
-              sourceMap: true
+              import: false, // 启用/禁用 url() 处理
+              modules: {
+                mode: 'local', // local / global
+                localIdentName: '[local]-[hash:5]' // 通过 [local] 只取css命名，实现公用样式的效果
+              },
+              localsConvention: 'camelCase', // Only dashes in class names will be camelized
+              importLoaders: 1
             }
           },
           'postcss-loader'
