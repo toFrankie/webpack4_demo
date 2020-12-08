@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import store from '../../store'
 import avatarImg from '../../../images/avatar.jpg'
 import style from './index.scss'
+import { WhiteSpace, Toast } from 'antd-mobile'
 
 class Home extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Home extends Component {
     return (
       <div className={`${style.redColor}`}>
         <h3>Home Component!</h3>
+        <WhiteSpace />
         {/* 将 state 展示到页面上 */}
         <h5>count：{this.props.count}</h5>
         <button onClick={this.handle.bind(this, 'ADD', 1)}>加一</button>

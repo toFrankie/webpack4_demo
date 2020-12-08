@@ -94,7 +94,8 @@ const config = {
         }
       },
       {
-        test: /\.s?css$/,
+        test: /\.scss$/,
+        exclude: path.resolve(__dirname, 'node_modules'),
         use: [
           'style-loader',
           {
@@ -112,6 +113,18 @@ const config = {
           },
           'postcss-loader'
         ]
+      },
+      {
+        // antd-mobile
+        test: /\.less$/,
+        include: path.resolve(__dirname, 'node_modules/antd-mobile'),
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
+        // Ant-Design 是一套设计语言，所以 antd 会引入一套 fork 自 normalize.css 的浏览器默认样式重置库。
+        test: /\.css$/,
+        include: /node_modules/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|gif|jpg|jpeg|bmp|webp)$/i,

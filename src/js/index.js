@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import '../styles/style.css'
+import '../styles/style.scss'
 import Root from './Root'
 
 // 最简单的 React 示例
