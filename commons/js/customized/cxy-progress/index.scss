@@ -1,0 +1,62 @@
+.cxyProgress {
+  background: #00b387;
+  padding: 0.3rem;
+  box-sizing: border-box;
+
+  .cellStatusBox {
+    padding-top: 0.4rem;
+    padding-bottom: 0.36rem;
+    background: #fff;
+    border-radius: 0.04rem;
+
+    .cellStatus {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0.3rem;
+      padding-right: 0.2rem;
+
+      .cellStatusName {
+        flex: 1;
+        color: #00b387;
+        font-size: 0.52rem;
+        line-height: 0.52rem;
+      }
+
+      .cellNavigate {
+        color: #00b488;
+        font-size: 0.28rem;
+        line-height: 0.32rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        > .icon {
+          width: 0.32rem;
+          height: 0.32rem;
+          background: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/arrow-right-green-32.png) no-repeat center center scroll;
+          background-size: 0.32rem 0.32rem !important;
+          margin-left: 0.08rem;
+        }
+      }
+    }
+
+    .cellDesc {
+      padding-left: 0.3rem;
+      padding-right: 0.5rem;
+      margin: 0.24rem 0 0.16rem 0;
+      font-size: 0.32rem;
+      color: #1a1a1a;
+      line-height: 0.44rem;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+    .cellTime {
+      padding-left: 0.3rem;
+      padding-right: 0.5rem;
+      font-size: 0.24rem;
+      color: #ababab;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.cxyCellShow {
+  width: 100%;
+  height: auto;
+  padding: 1px 0;
+  font-size: 0.28rem;
+
+  .cxyCellShowItem {
+    margin: 0.2rem 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .itemTitle {
+      color: #6a6a6a;
+    }
+
+    .itemValue {
+      margin-left: 0.3rem;
+      flex: 1;
+      color: #1a1a1a;
+      text-align: right;
+    }
+  }
+
+  .cxyCellShowItem:first-of-type {
+    margin-top: 0;
+  }
+
+  .cxyCellShowItem:last-of-type {
+    margin-bottom: 0;
+  }
+}

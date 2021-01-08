@@ -1,0 +1,94 @@
+.mySelectBox {
+  width: inherit;
+  height: 1rem;
+  font-size: 0.32rem;
+  line-height: 0.44rem;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+
+  /* 设置最大长度，超过2.3rem省略号表示... */
+  > .title {
+    color: #6a6a6a;
+    max-width: 2.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 1;
+    // line-clamp: 1;
+    // /*! autoprefixer: off */
+    // -webkit-box-orient: vertical;
+    // /*! autoprefixer: on */
+    // word-break: break-all;
+    // word-wrap: break-word;
+  }
+
+  > .icon {
+    width: 0.56rem;
+    height: 0.56rem;
+    // background-color: #eee;
+    background-image: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/tips-green-32.png);
+    background-size: 0.32rem 0.32rem;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  > .selectArea {
+    flex: 1;
+    height: 100%;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    > .select {
+      flex: 1;
+      color: #1a1a1a;
+      background: none;
+      margin: 0;
+      overflow: hidden;
+
+      display: flex;
+      // justify-content: flex-end;
+
+      .text {
+        text-align: right;
+        width: 100%;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // display: -webkit-box;
+        /*! autoprefixer: off */
+        -webkit-box-orient: vertical;
+        /*! autoprefixer: on */
+        -webkit-line-clamp: 1;
+      }
+    }
+
+    .selectPlaceholder {
+      color: #d4d4d4 !important;
+    }
+
+    .alignLeft {
+      flex: 1;
+      text-align: left !important;
+    }
+
+    .arrow {
+      width: 0.32rem;
+      height: 0.32rem;
+      background-image: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/arrow-right-gray-32.png);
+      background-size: 0.32rem 0.32rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-left: 0.08rem;
+    }
+  }
+}

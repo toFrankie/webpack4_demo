@@ -1,0 +1,113 @@
+.cxySelectFieldBox {
+  width: inherit;
+  margin: 40px 0 40px 30px;
+
+  .cxySelectFieldTitle {
+    font-size: 28px;
+    line-height: 32px;
+    color: #6a6a6a;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    .cxyIcon {
+      width: 54px;
+      height: 54px;
+      background-image: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/tips-green-54.png);
+      background-size: 32px 32px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .cxySelectField {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    > .selectArea {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+
+      > .select {
+        height: 66px;
+        line-height: 66px;
+        font-size: 32px;
+        font-weight: bold;
+        flex: 1;
+        color: #1a1a1a;
+        background: none;
+        margin: 0;
+        overflow: hidden;
+
+        display: flex;
+
+        .text {
+          text-align: right;
+          width: 100%;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: -webkit-box;
+          /*! autoprefixer: off */
+          -webkit-box-orient: vertical;
+          /*! autoprefixer: on */
+          -webkit-line-clamp: 1;
+        }
+      }
+
+      .selectPlaceholder {
+        color: #d4d4d4 !important;
+      }
+
+      .alignLeft {
+        flex: 1;
+        text-align: left !important;
+      }
+
+      .arrow {
+        width: 0.32rem;
+        height: 0.32rem;
+        background-image: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/arrow-right-gray-32.png);
+        background-size: 0.32rem 0.32rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: 0.08rem;
+      }
+    }
+  }
+  .cxySelectFieldLine {
+    margin: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .cxySelectFieldFocusLine {
+    margin: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    position: absolute;
+    background-color: #aaa;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    transform: scaleX(0);
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .cxySelectFieldOnFocus {
+    transform: scaleX(1);
+  }
+}

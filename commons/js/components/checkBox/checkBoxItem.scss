@@ -1,0 +1,27 @@
+@import '../../../styles/_commonColor.scss';
+.CheckBoxItem {
+  display: flex;
+  align-items: center;
+  .checkIcon {
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    border: solid 1px $gray;
+  }
+  .unable {
+    background: $bordergray;
+  }
+  .checked {
+    border: solid 1px $slidergreen;
+    background-color: $slidergreen;
+    background-image: url('./img/Fill.png');
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: center center;
+  }
+
+  .text {
+    padding: 0 0 0 8px;
+    color: #6a6a6a;
+  }
+}

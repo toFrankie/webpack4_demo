@@ -1,0 +1,35 @@
+.myPayment {
+  .payLine {
+    height: 1px;
+    background: #e5e5e5;
+  }
+  .payBox {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .fee {
+      font-size: 0.34rem;
+      padding-left: 0.3rem;
+    }
+
+    .btn {
+      margin: 0;
+      height: 1rem;
+      line-height: 1.02rem;
+      width: 2.2rem;
+      padding-top: 0.3rem;
+      text-align: center;
+      background: #00b488;
+      color: #fff;
+      font-size: 0.36rem;
+      font-weight: 600;
+      -webkit-tap-highlight-color: none;
+      border-radius: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+    }
+  }
+}

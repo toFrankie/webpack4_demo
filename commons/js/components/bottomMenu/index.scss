@@ -1,0 +1,54 @@
+.footPanel {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 950;
+
+  .activeText {
+    color: #00b488 !important;
+  }
+
+  .footNav {
+    border-top: 1px solid #e5e5e5;
+    overflow: hidden;
+    color: #666;
+    font-size: 0.2rem;
+    line-height: 0.2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    .navItem {
+      flex: 1;
+      padding: 0.06rem 0 0.12rem;
+
+      .footItemIcon {
+        width: 0.56rem;
+        height: 0.56rem;
+        margin: 0 auto;
+        position: relative;
+
+        .footItemBadge {
+          position: absolute;
+          top: -0.04rem;
+          left: 0.36rem;
+          padding: 0.04rem;
+          color: #fff;
+          font-size: 0.2rem;
+          line-height: 0.24rem;
+          text-align: center;
+          min-height: 0.3rem;
+          min-width: 0.3rem;
+          border-radius: 0.3rem;
+          background: #f6a623;
+        }
+      }
+
+      .footItemText {
+        margin-top: 0.08rem;
+      }
+    }
+  }
+}

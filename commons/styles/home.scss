@@ -1,0 +1,118 @@
+@import './_commonColor.scss';
+
+//html{
+//  height: 100%;
+//}
+//
+//body{
+//  min-height: 100%;
+//  display: flex;
+//  flex-direction: column;
+//}
+
+.register___3Xd5U {
+  & > div {
+    & > div {
+      & > div {
+        .am-list-content {
+          width: 1.79rem !important;
+          flex: none !important;
+          //text-align: right!important;
+          //padding-right: .75rem!important;
+        }
+        .am-list-extra {
+          text-align: left !important;
+          font-size: 0.32rem !important;
+          flex-basis: 50% !important;
+        }
+        .am-list-arrow {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+.am-switch input[type='checkbox']:checked + .checkbox {
+  background: $slidergreen !important;
+}
+
+.sliderBox___2cJeX {
+  .am-list-line {
+    .am-list-extra {
+      text-align: right !important;
+    }
+  }
+}
+
+.choiceColour {
+  text-align: left !important;
+  font-size: 0.32rem !important;
+  -ms-flex-preferred-size: 50% !important;
+  //flex-basis: 50% !important;
+  color: #333;
+}
+
+.am-picker-popup-mask {
+  //position:relative;
+  // animation:mymove 1s infinite;
+  //animation-delay:1s;
+  /*Safari and Chrome*/
+  //-webkit-animation:mymove 2s infinite;
+  -webkit-animation-delay: 0.4s;
+  animation-iteration-count: 1;
+}
+.am-picker-popup {
+  //position:relative;
+  // animation:mymove 1s infinite;
+  //animation-delay:1s;
+  /*Safari and Chrome*/
+  //-webkit-animation:mymove 2s infinite;
+  -webkit-animation-delay: 0.4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes mymove {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/ {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anticon-loading:before {
+  display: inline-block;
+  -webkit-animation: loadingCircle 1s infinite linear;
+  animation: loadingCircle 1s infinite linear;
+  content: '\E6A1';
+}
+@keyframes loadingCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loadingCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

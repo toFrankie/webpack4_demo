@@ -1,0 +1,105 @@
+.cxyInputBox {
+  width: inherit;
+  margin-left: 0.3rem;
+  margin-right: 0;
+  font-size: 0.32rem;
+  line-height: 0.44rem;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+
+  .cxyInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* 设置最大长度，超过2.3rem省略号表示... */
+    > .title {
+      color: #6a6a6a;
+      max-width: 2.3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      // display: -webkit-box;
+      // -webkit-line-clamp: 1;
+      // line-clamp: 1;
+      // /*! autoprefixer: off */
+      // -webkit-box-orient: vertical;
+      // /*! autoprefixer: on */
+      // word-break: break-all;
+      // word-wrap: break-word;
+    }
+
+    > .icon {
+      width: 0.56rem;
+      height: 0.56rem;
+      // background-color: #eee;
+      background-image: url(https://yzres.cx580.com/h5resource/pro/public/images/commonlyIcon/tips-green-32.png);
+      background-size: 0.32rem 0.32rem;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    > .input {
+      flex: 1;
+      text-align: right;
+      color: #1a1a1a;
+      font-size: 0.32rem;
+      // background: #f2f2f2;
+      width: 100%;
+      padding: 0.32rem 0 0.32rem 0.3rem;
+      background: none;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      font-family: inherit;
+      user-select: text;
+      -webkit-user-select: text;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    // WebKit, Blink, Edge
+    > .input::-webkit-input-placeholder {
+      color: #d4d4d4 !important;
+      font-size: 0.32rem !important;
+    }
+
+    // Mozilla Firefox 4 to 18
+    > .input:-moz-placeholder {
+      color: #d4d4d4 !important;
+      font-size: 0.32rem !important;
+    }
+
+    // Mozilla Firefox 19+
+    > .input::-moz-placeholder {
+      color: #d4d4d4 !important;
+      font-size: 0.32rem !important;
+    }
+
+    // Internet Explorer 10-11
+    > .input:-ms-input-placeholder {
+      color: #d4d4d4 !important;
+      font-size: 0.32rem !important;
+    }
+
+    > .inputError {
+      color: #e64340 !important;
+    }
+
+    > .alignLeft {
+      text-align: left !important;
+      padding-left: 0 !important;
+    }
+  }
+
+  .inputDescription {
+    color: #ababab;
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    margin-top: 0;
+    margin-bottom: 0.16rem;
+    position: relative;
+    top: -0.16rem;
+  }
+}

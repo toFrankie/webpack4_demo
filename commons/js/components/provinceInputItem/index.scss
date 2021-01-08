@@ -1,0 +1,43 @@
+@import '../../../styles/_commonColor.scss';
+
+.provinceInputItem {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  .title {
+    width: 200px;
+  }
+  .inputContent {
+    flex: 1;
+    min-width: 0;
+    input {
+      display: block;
+      min-width: 0;
+    }
+  }
+
+  .itemIcon {
+    display: block;
+    height: 52px;
+    line-height: 52px;
+    border-radius: 5px;
+    color: $slidergreen;
+    text-align: left;
+    margin-right: 30px;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .rightArrow {
+      background-image: url('https://yzres.cx580.com/h5resource/test/public/images/arrowright.png');
+      background-size: 18.8px 26px;
+      background-repeat: no-repeat;
+      height: 26px;
+      width: 18.8px;
+      margin-left: 15px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

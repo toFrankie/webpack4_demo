@@ -1,0 +1,44 @@
+.cellContent {
+  width: 100%;
+  height: auto;
+  // background: rgba(0, 0, 0, 0.1);
+  padding: 1px 0;
+  font-size: 0.28rem;
+  line-height: 0.4rem;
+
+  .cellContentItem {
+    margin: 0.24rem 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .itemTitle {
+      color: #ababab;
+    }
+
+    .itemValue {
+      margin-left: 0.3rem;
+      flex: 1;
+      color: #6a6a6a;
+      text-align: right;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // display: -webkit-box;
+      // -webkit-line-clamp: 1;
+      // line-clamp: 1;
+      // /*! autoprefixer: off */
+      // -webkit-box-orient: vertical;
+      // /*! autoprefixer: on */
+      // word-break: break-all;
+      // word-wrap: break-word;
+    }
+  }
+
+  .cellContentItem:first-of-type {
+    margin-top: 0.4rem;
+  }
+
+  .cellContentItem:last-of-type {
+    margin-bottom: 0.4rem;
+  }
+}

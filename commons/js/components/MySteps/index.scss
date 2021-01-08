@@ -1,0 +1,103 @@
+.myStepsBox {
+  width: inherit;
+  height: auto;
+
+  .mySteps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .myStepsLeft {
+      width: 0.5rem;
+      margin-right: 0.16rem;
+      display: flex;
+      flex-direction: column;
+
+      .stepsCircle {
+        width: 0.5rem;
+        height: 0.5rem;
+        position: relative;
+        z-index: 1;
+
+        .circleDefault {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0.14rem;
+          height: 0.14rem;
+          background: #c8c8c8;
+          border-radius: 1rem;
+          z-index: 2;
+        }
+
+        .circleBig {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0.34rem;
+          height: 0.34rem;
+          background: rgba(0, 180, 136, 0.2);
+          border-radius: 1rem;
+          z-index: 2;
+        }
+
+        .circleSmall {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0.18rem;
+          height: 0.18rem;
+          background: #00b488;
+          border-radius: 1rem;
+          z-index: 3;
+        }
+      }
+
+      .stepsLine {
+        min-height: 0.88rem;
+        width: 0.02rem;
+        background: #c8c8c8;
+        margin-left: 0.24rem;
+        flex: 1;
+      }
+    }
+
+    .myStepsRight {
+      flex: 1;
+      padding-bottom: 0.8rem;
+
+      .stepsColor1A1A1A {
+        color: #1a1a1a;
+      }
+      .stepsColorC8C8C8 {
+        color: #c8c8c8;
+      }
+      .stepsColor00B488 {
+        color: #00b488;
+      }
+      .stepsText32 {
+        font-size: 0.32rem !important;
+        line-height: 0.4rem !important;
+      }
+      .stepsText26 {
+        font-size: 0.26rem;
+        line-height: 0.32rem;
+        margin-top: 0.08rem;
+      }
+      .stepsWeight600 {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .mySteps:last-of-type {
+    .myStepsLeft {
+      .stepsLine {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.CxyCard {
+  width: inherit;
+  background: inherit;
+  margin: 0.24rem;
+
+  .cardTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text {
+      font-size: 0.28rem;
+      font-weight: 600;
+      color: #6a6a6a;
+      line-height: 0.28rem;
+      padding: 0.24rem 0;
+    }
+
+    .iconBox {
+      width: 0.36rem;
+      height: 0.36rem;
+      position: relative;
+
+      .img {
+        width: 0.36rem;
+        height: 0.36rem;
+        display: block;
+      }
+    }
+
+    .iconClick {
+      width: 0.36rem;
+      height: 0.36rem;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transform: scale(2);
+    }
+  }
+
+  .cardContent {
+    box-shadow: 0 0.02rem 0.1rem 0 rgba(152, 164, 177, 0.2);
+    background: #fff;
+    border-radius: 0.08rem;
+  }
+}

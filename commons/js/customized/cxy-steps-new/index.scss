@@ -1,0 +1,250 @@
+.cxyStepsNew {
+  width: inherit;
+  height: auto;
+  padding: 32px 30px;
+  color: #6a6a6a;
+  font-size: 24px;
+
+  .cxySteps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .cxySteps:last-of-type .stepsMiddle .stepsLine {
+    display: none;
+  }
+
+  .stepsLeft {
+    width: 156px;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: right;
+
+    .main {
+      line-height: 38px;
+    }
+
+    .secondary {
+      margin-top: 0;
+      color: #ababab;
+    }
+  }
+
+  .stepsMiddle {
+    width: 40px;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .stepsNode {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    .nodeEarliest {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #ddd !important;
+      background-size: 100% 100% !important;
+    }
+
+    .nodeEarliest::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 14px;
+      background: rgba(229, 229, 229, 0.5);
+    }
+
+    // 常规状态，中间节点，灰色
+    .nodeNormal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #ddd !important;
+      background-size: 100% 100% !important;
+    }
+
+    .nodeNormal::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 14px;
+      background: rgba(229, 229, 229, 0.5);
+    }
+
+    .nodeNormal::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 14px;
+      background: rgba(229, 229, 229, 0.5);
+    }
+
+    // 激活状态，第一个节点，绿色
+    .nodeLastest {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #4fb08b !important;
+      background-size: 100% 100% !important;
+    }
+
+    .nodeLastest::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 14px;
+      background: rgba(229, 229, 229, 0.5);
+    }
+
+    // 常规状态，只有一个节点
+    .nodeOnlyOne {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #4fb08b !important;
+      background-size: 100% 100% !important;
+    }
+
+    .node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100% !important;
+    }
+
+    // 已揽收
+    .node00 {
+      background-image: url(https://yzres.cx580.com/wx/images/public/commonlyIcon/icon-wuliu-00.png);
+    }
+
+    // 派送中
+    .node50 {
+      background-image: url(https://yzres.cx580.com/wx/images/public/commonlyIcon/icon-wuliu-50.png);
+    }
+
+    // 已签收
+    .node10 {
+      background-image: url(https://yzres.cx580.com/wx/images/public/commonlyIcon/icon-wuliu-10.png);
+    }
+  }
+
+  .stepsLinePlaceholder {
+    // min-height: 80px;
+    width: 40px;
+    background: none;
+    margin: 0 auto;
+    min-height: 80px;
+    flex: 1;
+    position: relative;
+  }
+
+  .stepsLine {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(229, 229, 229, 0.5);
+  }
+
+  // 右边部分
+  .stepsRight {
+    flex: 1;
+    padding-bottom: 40px;
+
+    .main {
+      font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 12px;
+    }
+    .secondary {
+      line-height: 38px;
+    }
+  }
+
+  .cxySteps:last-of-type .stepsRight {
+    padding-bottom: 0;
+  }
+
+  // 展开
+  .expand {
+    font-size: 24px;
+    line-height: 24px;
+    color: #ababab;
+    padding: 32px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      background: url(https://yzres.cx580.com/wx/images/public/commonlyIcon/icon-wuliu-expand.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .iconRotate {
+      transform: rotate(180deg);
+    }
+  }
+}

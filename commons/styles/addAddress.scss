@@ -1,0 +1,12 @@
+@import './_commonColor.scss';
+
+.am-list-item .am-list-line .am-list-arrow {
+  display: none;
+}
+
+.am-list-item .am-list-line .am-list-extra {
+  text-align: left;
+  flex-basis: 70%;
+  font-size: 0.32rem;
+  color: $gray;
+}

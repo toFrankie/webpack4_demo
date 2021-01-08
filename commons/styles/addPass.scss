@@ -1,0 +1,19 @@
+@import './_commonColor.scss';
+
+.birthData___14UgK {
+  & > div {
+    & > div {
+      & > div {
+        .am-list-content {
+          color: $black !important;
+          font-size: 0.32rem !important;
+          width: 1.79rem !important;
+          flex: initial !important;
+        }
+        .am-list-arrow {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
