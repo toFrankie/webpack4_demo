@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const ESLintPlugin = require('eslint-webpack-plugin')
 
 const config = {
+  target: 'web',
   mode: 'development',
   devtool: 'cheap-module-eval-source-map', // 生产：cheap-module-source-map
   entry: ['react-hot-loader/patch', './src/js/index.js'],
@@ -69,8 +70,9 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, 'src/js'),
-      '~@': path.resolve(__dirname, 'src/styles'),
+      '@js/': path.resolve(__dirname, 'src/js'),
+      '@styles/': path.resolve(__dirname, 'src/styles'),
+      '@images/': path.resolve(__dirname, 'src/images'),
       'react-dom': '@hot-loader/react-dom'
     }
   },
@@ -127,6 +129,13 @@ const config = {
         test: /\.css$/,
         include: /node_modules/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        }
       },
       {
         test: /\.(png|gif|jpg|jpeg|bmp|webp)$/i,
