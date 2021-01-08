@@ -73,8 +73,8 @@ const config = {
       '@js': path.resolve(__dirname, 'src/js'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@images': path.resolve(__dirname, 'src/images'),
-      'app/': path.resolve(__dirname, 'commons/js'),
-      'style': path.resolve(__dirname, 'comons/images'),
+      'app': path.resolve(__dirname, 'commons/js'),
+      'style': path.resolve(__dirname, 'comons/styles'),
       'react-dom': '@hot-loader/react-dom'
     }
   },

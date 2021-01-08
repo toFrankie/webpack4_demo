@@ -1,4 +1,6 @@
 module.exports = {
+  indet: 'postcss',
+  parser: 'postcss-scss',
   plugins: [
     require('precss'),
     require('autoprefixer'),
