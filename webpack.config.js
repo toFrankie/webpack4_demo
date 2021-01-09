@@ -73,8 +73,8 @@ const config = {
       '@js': path.resolve(__dirname, 'src/js'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@images': path.resolve(__dirname, 'src/images'),
-      'app': path.resolve(__dirname, 'commons/js'),
-      'style': path.resolve(__dirname, 'comons/styles'),
+      app: path.resolve(__dirname, 'commons/js'),
+      style: path.resolve(__dirname, 'commons/styles'),
       'react-dom': '@hot-loader/react-dom'
     }
   },
@@ -124,7 +124,16 @@ const config = {
         // antd-mobile
         test: /\.less$/,
         include: path.resolve(__dirname, 'node_modules/antd-mobile'),
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ]
       },
       {
         // Ant-Design 是一套设计语言，所以 antd 会引入一套 fork 自 normalize.css 的浏览器默认样式重置库。
