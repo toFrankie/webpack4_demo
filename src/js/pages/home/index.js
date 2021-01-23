@@ -24,8 +24,8 @@ class Home extends Component {
   render() {
     return (
       <div className={`${style.redColor}`}>
-        <h3>Home Component!</h3>
         <WhiteSpace />
+        <h3>Home Component!</h3>
         {/* 将 state 展示到页面上 */}
         <h5>count：{this.props.count}</h5>
         <button onClick={this.handle.bind(this, 'ADD', 1)}>加一</button>
@@ -46,7 +46,7 @@ class Home extends Component {
           Login out
         </button>
 
-        <img src={avatarImg} />
+        <img style={{ width: '50px' }} src={avatarImg} />
       </div>
     )
   }
