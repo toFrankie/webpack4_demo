@@ -40,6 +40,7 @@ module.exports = {
     'no-eval': 2,
     'spaced-comment': 2,
     'react/self-closing-comp': 0,
-    indent: ['error', 2, { SwitchCase: 1 }]
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'no-void': 0
   }
 }
