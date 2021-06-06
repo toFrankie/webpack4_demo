@@ -13,20 +13,28 @@ class About extends Component {
     const xhr = new XMLHttpRequest()
 
     // 通过 onreadystatechange 事件捕获请求状态的变化
-    // 必须在 open 之前指定该事件，否则无法接收 readyState 0 和 1 的状态
     xhr.onreadystatechange = () => {
-      console.log(xhr.status)
-      console.log(xhr.readyState)
+      // console.log(xhr.status)
+      // console.log(xhr.readyState)
 
-      console.log(xhr.getResponseHeader('FooBar'))
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        console.log(xhr.getResponseHeader('Date'))
+        console.log(xhr.getResponseHeader('Access-Control-Allow-Origin'))
+      }
     }
 
+    // 捕获错误
     xhr.onerror = err => {
       console.log('error:', err)
     }
 
+    xhr.withCredentials = true
+
     // 初始化请求
-    xhr.open('GET', 'http://10.16.4.226:7701/config', true)
+    xhr.open('PUT', 'http://192.168.1.105:7701/config', true)
+
+    // 设置自定义头部（必须在 open 之后）
+    xhr.setRequestHeader('X-Custom-Header', 'foo')
 
     // 发送请求
     xhr.send(null)
